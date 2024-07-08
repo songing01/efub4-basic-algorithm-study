@@ -8,10 +8,10 @@ vector<vector<int>> edges(101, vector<int>(101, 0));
 
 void dfs(int N, int x)
 {
-    visit[x] = true;
+    ::visit[x] = true;
     for (int i = 1; i <= N; i++)
     {
-        if (edges[x][i] == 1 && visit[i] == false)
+        if (edges[x][i] == 1 && ::visit[i] == false)
         {
             dfs(N, i);
         }
@@ -26,7 +26,7 @@ int getSolution(int N)
 
     for (int i = 1; i <= N; i++)
     {
-        if (visit[i] == true)
+        if (::visit[i] == true)
         {
             cnt++;
         }
